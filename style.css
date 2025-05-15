@@ -1,0 +1,107 @@
+    html, body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background: #f8f9fa;
+      height: 100%;
+    }
+
+    body {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    .header {
+      padding: 20px;
+      text-align: center;
+    }
+
+    .header img {
+      height: 80px;
+      max-width: 100%;
+    }
+
+    .title {
+      font-size: 1.2em;
+      margin: 5px 0;
+      color: #003366;
+    }
+
+    .main-content {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .portal-box {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      width: 95%;
+      max-width: 500px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+
+    .pay-logo {
+      height: 50px;
+      max-width: 100%;
+    }
+
+    input[type="text"] {
+      padding: 10px;
+      width: 90%;
+      max-width: 300px;
+      margin-top: 15px;
+      margin-bottom: 10px;
+      font-size: 1em;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 1em;
+      background-color: #1a580e;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+
+    .result {
+      margin-top: 20px;
+      font-size: 0.95em;
+    }
+
+    .footer {
+      padding: 10px;
+      background: #1a580e;
+      color: white;
+      font-size: 0.9em;
+      text-align: center;
+    }
+
+    .footer b {
+      color: yellow;
+    }
+
+    @media screen and (max-width: 600px) {
+      .title {
+        font-size: 1em;
+      }
+
+      .portal-box {
+        padding: 15px;
+      }
+
+      input[type="text"] {
+        width: 95%;
+      }
+
+      button {
+        width: 95%;
+      }
+    }
