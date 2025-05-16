@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="shortcut icon" href="Accets/svu_logo.png" type="image/x-icon">
+  <title>Payment</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+    }
+
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .qr-box {
+      background: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      text-align: center;
+      max-width: 500px;
+      width: 90%;
+    }
+
+    .title {
+      font-size: 1.5em;
+      margin-bottom: 15px;
+      color: #003366;
+    }
+
+    .student-info {
+      margin-bottom: 15px;
+      color: #222;
+      font-size: 1em;
+    }
+
+    .student-info b {
+      color: #000;
+    }
+
+    .qr-box img {
+      width: 100%;
+      max-width: 400px;
+      height: auto;
+      margin: 10px 0;
+    }
+
+    .qr-box p {
+      margin: 5px 0;
+      color: #555;
+      font-size: 0.95em;
+    }
+
+    .note {
+      margin-top: 10px;
+      color: #777;
+      font-size: 0.9em;
+    }
+
+    @media (max-width: 600px) {
+      .title {
+        font-size: 1.2em;
+      }
+
+      .student-info {
+        font-size: 0.95em;
+      }
+
+      .note {
+        font-size: 0.85em;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="qr-box">
+    <div class="title">Pay Fees via QR Code</div>
+
+    <div class="student-info" id="studentInfo">
+      <!-- Student data will appear here -->
+    </div>
+
+    <img src="Accets/bercode.jpeg" alt="College QR Code" />
+    <p><b>UPI ID:</b> swami.vivekananda.university@icici</p>
+    <div class="note">Scan this code with your UPI app to pay the fees.</div>
+  </div>
+
+  <script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const roll = urlParams.get('roll');
+    const name = urlParams.get('name');
+    const amount = urlParams.get('amount');
+
+    const infoBox = document.getElementById('studentInfo');
+    if (roll && name && amount) {
+      infoBox.innerHTML = `
+        <p><b>Name:</b> ${name}</p>
+        <p><b>Roll No:</b> ${roll}</p>
+        <p><b>Amount to Pay:</b> ₹${amount}</p>
+      `;
+    }
+  </script>
+</body>
+</html>
